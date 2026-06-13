@@ -6,6 +6,7 @@ import MedicalCalculator from '../components/MedicalCalculator';
 import JsonLd from '../components/JsonLd';
 import AppointmentForm from '../components/AppointmentForm';
 import { motion } from 'motion/react';
+import doctorImg from '../../assets/doctor.png';
 
 interface HomeProps {
   onNavigate: (route: AppRoute) => void;
@@ -287,7 +288,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 {/* Confident Doctor cutout */}
                 <div className="absolute right-0 bottom-0 w-[58%] h-full z-20 pointer-events-none">
                   <img
-                    src="/assets/doctor.png"
+                    src={doctorImg}
                     alt="Dr. Anirban Majumder, Consultant Endocrinologist & Diabetologist"
                     className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-95"
                     referrerPolicy="no-referrer"
