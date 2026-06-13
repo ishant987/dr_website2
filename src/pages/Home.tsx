@@ -4,6 +4,7 @@ import { AppRoute } from '../types';
 import FAQAccordion from '../components/FAQAccordion';
 import MedicalCalculator from '../components/MedicalCalculator';
 import JsonLd from '../components/JsonLd';
+import AppointmentForm from '../components/AppointmentForm';
 import { motion } from 'motion/react';
 
 interface HomeProps {
@@ -366,6 +367,33 @@ export default function Home({ onNavigate }: HomeProps) {
 
             </motion.div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* BOOK APPOINTMENT SECTION */}
+      <section className="py-12 sm:py-16 bg-[#040314] border-t border-brand-400/20" aria-labelledby="book-appointment-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-7 xl:col-span-8">
+              <h2 id="book-appointment-heading" className="text-2xl sm:text-3xl font-serif text-slate-100 font-bold mb-2">Book an Appointment</h2>
+              <p className="text-slate-400 text-sm mb-6">Use the form to request a consultation slot and our team will call to confirm your appointment.</p>
+              <AppointmentForm />
+            </div>
+
+            <aside className="lg:col-span-5 xl:col-span-4">
+              <div className="bg-[#07051a]/60 rounded-xl border border-brand-400/30 p-5 text-slate-200 shadow-lg">
+                <h3 className="text-sm font-semibold text-slate-100">What to expect</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-400">
+                  <li className="flex items-start gap-2"><Clock className="w-4 h-4 text-brand-800 mt-0.5" /> Office hours: {CLINIC_INFO.workingHours}</li>
+                  <li className="flex items-start gap-2"><Phone className="w-4 h-4 text-brand-800 mt-0.5" /> Call us: <a href={`tel:${CLINIC_INFO.phoneMobile}`} className="text-brand-800 font-semibold">{CLINIC_INFO.phoneMobile}</a></li>
+                  <li className="flex items-start gap-2"><Mail className="w-4 h-4 text-brand-800 mt-0.5" /> Email: <a href={`mailto:${CLINIC_INFO.email}`} className="text-brand-800 font-semibold">{CLINIC_INFO.email}</a></li>
+                </ul>
+                <div className="mt-4 text-xs text-slate-400">
+                  <p>Please keep a reachable phone number — our coordinator will call to finalise the slot.</p>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
